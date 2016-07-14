@@ -1,9 +1,0 @@
-c:\users\antomonov.ale\documents\visual studio 2015\Projects\DataForDB\DataForDB\bin\Debug\DataForDB.exe.config
-c:\users\antomonov.ale\documents\visual studio 2015\Projects\DataForDB\DataForDB\bin\Debug\DataForDB.exe
-c:\users\antomonov.ale\documents\visual studio 2015\Projects\DataForDB\DataForDB\bin\Debug\DataForDB.pdb
-c:\users\antomonov.ale\documents\visual studio 2015\Projects\DataForDB\DataForDB\obj\Debug\DataForDB.csprojResolveAssemblyReference.cache
-c:\users\antomonov.ale\documents\visual studio 2015\Projects\DataForDB\DataForDB\obj\Debug\DataForDB.Properties.Resources.resources
-c:\users\antomonov.ale\documents\visual studio 2015\Projects\DataForDB\DataForDB\obj\Debug\DataForDB.csproj.GenerateResource.Cache
-c:\users\antomonov.ale\documents\visual studio 2015\Projects\DataForDB\DataForDB\obj\Debug\DataForDB.exe
-c:\users\antomonov.ale\documents\visual studio 2015\Projects\DataForDB\DataForDB\obj\Debug\DataForDB.pdb
-C:\Users\antomonov.ale\Documents\Visual Studio 2015\Projects\DataForDB\DataForDB\obj\Debug\DataForDB.DataForm.resources
