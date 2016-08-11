@@ -20,25 +20,24 @@ namespace DataForDB
         private void buttonGenerate_Click(object sender, EventArgs e)
         {
             ResultTextBox.Text = "";
-            progressBarGeneration.Maximum = Convert.ToInt32(numericUpDownNumRec.Value);
+            var NumRec = Convert.ToInt32(numericUpDownNumRec.Value);
+            progressBarGeneration.Maximum = NumRec;
             progressBarGeneration.Value = 0;
             progressBarGeneration.Step = 1;
-            string beg = "{\"Addresses\":[{\"Type\":2,\"Value\":\"rambler.ru\"}";
-            string str1 = ",{\"Type\":2,\"Value\":\"rambler";
-            string str2 = ".ru\"}";
-            StringBuilder res = new StringBuilder();
-
-            for (int i = 1; i <= numericUpDownNumRec.Value; i++)
+            string begin = "{\"Addresses\":[";
+            string addTemplate = "{{\"Type\":2,\"Value\":\"rambler{0}.ru\"}},";
+            string end = "]}";
+            var result = new StringBuilder(begin);
+             
+            for (int i = 1; i <= NumRec; i++)
             {
-                res.Append(beg).Append(str1).Append(i).Append(str2);
+                result.AppendFormat(addTemplate, i);
                 progressBarGeneration.PerformStep();
                 //progressBarGeneration.Value++;
             }
-
-            StringBuilder ed = new StringBuilder();
-            ed.Append(res + "]}");
-            string resstr = ed.ToString();
-            ResultTextBox.Text = resstr;
+            result.Length--;
+            result.Append(end);
+            ResultTextBox.Text = result.ToString();
         }
         private void numericUpDownNumRec_KeyPress(object sender, KeyPressEventArgs e)
         {
