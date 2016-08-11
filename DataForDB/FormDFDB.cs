@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DataForDB
@@ -19,9 +15,9 @@ namespace DataForDB
 
         private void buttonGenerate_Click(object sender, EventArgs e)
         {
-            ResultTextBox.Text = "";
-            var NumRec = Convert.ToInt32(numericUpDownNumRec.Value);
-            progressBarGeneration.Maximum = NumRec;
+			ResultTextBox.Clear();
+            int numRec = Convert.ToInt32(numericUpDownNumRec.Value);
+            progressBarGeneration.Maximum = numRec;
             progressBarGeneration.Value = 0;
             progressBarGeneration.Step = 1;
             string begin = "{\"Addresses\":[";
@@ -29,11 +25,10 @@ namespace DataForDB
             string end = "]}";
             var result = new StringBuilder(begin);
              
-            for (int i = 1; i <= NumRec; i++)
+            for (int i = 0; i < numRec; i++)
             {
-                result.AppendFormat(addTemplate, i);
+                result.AppendFormat(addTemplate, i+1);
                 progressBarGeneration.PerformStep();
-                //progressBarGeneration.Value++;
             }
             result.Length--;
             result.Append(end);
@@ -41,8 +36,10 @@ namespace DataForDB
         }
         private void numericUpDownNumRec_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < '0') || (e.KeyChar > '9'))
-                e.Handled = true;
+			if ((e.KeyChar < '0') || (e.KeyChar > '9')) 
+			{
+				e.Handled = true;
+			}
         }
     }
 }
